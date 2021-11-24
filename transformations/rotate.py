@@ -13,4 +13,4 @@ def rotate(parent, pixels):
 
     pixels = np.rot90(pixels)
 
-    parent.set_image(pixels)
+    parent.set_image(pixels, has_filter=True)

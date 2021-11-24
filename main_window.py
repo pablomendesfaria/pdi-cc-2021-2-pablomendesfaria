@@ -116,6 +116,7 @@ class MainWindow(QMainWindow):
         self.transform_bkup = []
         self.pixels = []
         self.has_filter = False
+        self.has_saved = False
         self.setup_status_bar()
         self.setup_ui()
 
@@ -195,6 +196,7 @@ class MainWindow(QMainWindow):
         Salva a imagem no caminho de destino com o mesmo nome, assim sobreescrevendo a antiga
         """
         self.image.save(self.img_path)
+        self.has_saved = True
         self.init_image()
         self.save_status.setText('   Save Status: Saved   ')
 
@@ -208,6 +210,7 @@ class MainWindow(QMainWindow):
         if path:
             self.img_path = path
             self.image.save(self.img_path)
+            self.has_saved = True
             self.init_image()
             self.file_name.setText(f'   Name: {self.get_image_name()}   ')
             self.file_path.setText(f'   Path: {self.img_path}   ')
@@ -228,8 +231,8 @@ class MainWindow(QMainWindow):
         img.format = self.original_format
         self.pixels = np.array(img)
         self.image = img
-        self.pixels_bkup = self.pixels.copy()
-
+        if not self.has_saved:
+            self.pixels_bkup = self.pixels.copy()
         self.set_img_on_label()
 
     def set_image(self, pixels, has_filter=False):
@@ -288,12 +291,13 @@ class MainWindow(QMainWindow):
         self.set_img_on_label()
 
         self.has_filter = False
+        self.has_saved = False
         self.gamma_slider.setValue(100)
         self.gamma_spin.setValue(1)
         self.transparency_slider.setValue(0)
         self.transparency_spin.setValue(0)
-        self.action_save_as.setDisabled(True)
         self.btn_reset.setDisabled(True)
+        self.save_status.setText('   Save Status: Not Saved*   ')
 
     def set_enable_disable(self):
         """
