@@ -4,9 +4,9 @@ Um simples programa de edição de imagem que possui funcionalidade de abrir, sa
 além de alguns filtros e transformações como escala de cinza, negativo, transparência, correção gama rotação
 e espelhamento.
 
-# Tecnologias:
+# Dependências:
 
-Python, Pillow, Pyqt5, Numpy e OpenCV, os comandos para instalar cada uma 
+Python, Pillow, Pyqt5 ou PySide2, Numpy e OpenCV, os comandos para instalar cada uma 
 delas segue abaixo.
 
 [pip install Pillow](https://pypi.org/project/Pillow/)
@@ -22,7 +22,3 @@ delas segue abaixo.
 # GIF (não representa a velocidade real da aplicação):
 
 ![gif da aplicação funcionando](https://user-images.githubusercontent.com/48353092/143264144-9a565db5-f14d-4bcf-bf3a-ec80c8480fd1.gif)
-
-# Integrantes:
-
-Pablo Mendes Faria.
