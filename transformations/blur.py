@@ -1,6 +1,7 @@
 """
 Importa a biblioteca PIL usada para a manipulação da imagem
 """
+<<<<<<< HEAD
 import numpy as np
 from PIL import (Image, ImageFilter)
 
@@ -15,3 +16,19 @@ def apply_filter(parent, ui_function, pixels):
     img = Image.fromarray(pixels)
     img2 = img.filter(ImageFilter.BLUR)
     ui_function.set_image(parent, img2, True, True)
+=======
+from PIL import (Image, ImageFilter)
+
+
+def apply_filter(parent, pixels, size):
+    """
+    Aplica o filtro Blur na imagem usando a biblioteca PIL e retorna os pixels da imagem para a classe MainWindow
+    :param parent: uma instancia da classe MainWindow
+    :param pixels: os pixels da imagem que tera o seguinte filtro aplicado
+    :param size: tamanho da imagem que recebera o filtro
+    """
+    img = Image.new('RGBA', size, (255, 255, 255))
+    img.putdata(pixels)
+    img2 = img.filter(ImageFilter.BLUR)
+    parent.set_image(list(img2.getdata()), has_filter=True)
+>>>>>>> 2c6988e60113dcb07bc3a10106dbf06a93b5ccad

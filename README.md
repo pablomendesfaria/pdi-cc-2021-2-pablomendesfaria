@@ -1,19 +1,15 @@
 # Descrição:
 
-Um simples programa de edição de imagem que possui funcionalidade de abrir, salvar e 'salvar como' uma imagem
-além de alguns filtros e transformações como escala de cinza, negativo, transparência, correção gama rotação
-e espelhamento.
+O editor de imagens simples, porém optimizado através de vetorização e list comprehension com Numpy e OpenCV, o que resultou em um aumento muito significante na velocidade de execução da aplicação em todos os sentidos.
 
 # Dependências:
 
-Python, Pillow, Pyqt5 ou PySide2, Numpy e OpenCV, os comandos para instalar cada uma 
+Python, Pillow, PySide6, Numpy e OpenCV, os comandos para instalar cada uma 
 delas segue abaixo.
 
 [pip install Pillow](https://pypi.org/project/Pillow/)
 
-[pip install PyQt5](https://pypi.org/project/PyQt5/)
-
-[pip install pyqt5-tools](https://pypi.org/project/pyqt5-tools/)
+[pip install PySide6](https://pypi.org/project/PySide6/)
 
 [pip install numpy](https://numpy.org/install/)
 
